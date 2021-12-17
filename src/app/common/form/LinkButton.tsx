@@ -2,17 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
 
-// interface Props {
-//     history: string,
-//     location: string,
-//     match: string,
-//     staticContext: string,
-//     to: string,
-//     onClick: () => void,
-//     // ⬆ filtering out props that `button` doesn’t know what to do with.
-//     ...rest: any
-// }
-
 const LinkButton = (props: any) => {
   const {
     history,

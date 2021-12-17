@@ -8,20 +8,13 @@ import { v4 as uuid } from 'uuid';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import MyTextInput from '../../../app/common/form/MyTextInput';
-import MyTextArea from '../../../app/common/form/MyTextArea';
-import MySelectInput from '../../../app/common/form/MySelectInput';
-import { categoryOptions } from '../../../app/common/options/categoryOptions';
-import MyDateInput from '../../../app/common/form/MyDateInput';
-import { Activity } from '../../../app/models/activity';
-import { Brand } from '../../../app/models/brand';
-import LinkButton from '../../../app/common/form/LinkButton';
-import { ExclamationCircleIcon } from '@heroicons/react/outline';
+
 import { RegisterUserFormValues } from '../../../app/models/user';
 
 
 
 
-export default observer(function UserForm() {
+export default observer(function UserRegistration() {
 
 
     const history = useHistory();

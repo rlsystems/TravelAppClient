@@ -18,7 +18,7 @@ import ModalContainer from '../common/modals/ModalContainer';
 import BrandDashboard from '../../features/brands/dashboard/BrandDashboard';
 import BrandForm from '../../features/brands/form/BrandForm';
 import UserDashboard from '../../features/users/dashboard/UserDashboard';
-import UserForm from '../../features/users/form/UserForm';
+import UserRegistration from '../../features/users/form/UserRegistration';
 import UserProfile from '../../features/users/form/UserProfile';
 
 function App() {
@@ -79,7 +79,7 @@ function App() {
                     <Route exact key={location.key} path={['/createBrand', '/editBrand/:id']} component={BrandForm} />
                     
                     <Route exact path='/users' component={UserDashboard} />
-                    <Route exact path='/createUser' component={UserForm} />
+                    <Route exact path='/createUser' component={UserRegistration} />
 
                     <Route exact key={location.key} path={['/editUser', '/editUser/:id']} component={UserProfile} />
 
