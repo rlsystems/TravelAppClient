@@ -1,7 +1,6 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { toast } from 'react-toastify';
 import { history } from '../..';
-import { Activity } from '../models/activity';
 import { Brand } from '../models/brand';
 
 import { store } from '../stores/store';
@@ -9,6 +8,7 @@ import { TokenData, User, UserLogin, RegisterUserFormValues } from '../models/us
 import { SearchParams } from '../models/searchParams';
 import { PaginatedResult } from '../models/paginatedResult';
 import { Result } from '../models/result';
+import { RegisterTenantFormValues, Tenant } from '../models/tenant';
 
 
 const sleep = (delay: number) => {
@@ -77,13 +77,6 @@ const requests = {
     del: <T>(url: string) => axios.delete<T>(url).then(responseBody),
 }
 
-const Activities = {
-    list: () => requests.get<Activity[]>('/activities'),
-    details: (id: string) => requests.get<Activity>(`/activities/${id}`),
-    create: (activity: Activity) => requests.post<void>('/activities', activity),
-    update: (activity: Activity) => requests.put<void>(`/activities/${activity.id}`, activity),
-    delete: (id: string) => requests.del<void>(`/activities/${id}`),
-}
 
 const Brands = {
 
@@ -109,14 +102,21 @@ const Users = {
     create: (appUser: RegisterUserFormValues) => requests.post<Result<String>>(`/identity/register`, appUser),
     details: (id: string) => requests.get<Result<User>>(`/identity/profile/${id}`),
     update: (user: User) => requests.put<void>(`/identity/profile/${user.id}`, user), //with id is admin editing a user
+}
+
+//Tenants
+const Tenants = {
+    list: () => requests.get<Result<Tenant[]>>('/tenants'),
+    details: (id: string) => requests.get<Result<Tenant>>(`/tenants/${id}`),
+    create: (tenant: Tenant) => requests.post<Result<Tenant>>(`/tenants`, tenant),
 
 }
 
 const agent = {
-    Activities,
     Account,
     Users,
-    Brands
+    Brands,
+    Tenants
 }
 
 export default agent;

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import NavBar from './NavBar';
-import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
 
 import { observer } from 'mobx-react-lite';
 import { Route, useLocation } from 'react-router';
@@ -20,6 +19,8 @@ import BrandForm from '../../features/brands/form/BrandForm';
 import UserDashboard from '../../features/users/dashboard/UserDashboard';
 import UserRegistration from '../../features/users/form/UserRegistration';
 import UserProfile from '../../features/users/form/UserProfile';
+import TenantDashboard from '../../features/tenants/dashboard/TenantDashboard';
+import TenantForm from '../../features/tenants/form/TenantForm';
 
 function App() {
   const location = useLocation(); //returns location object from router, useful for the key
@@ -72,8 +73,7 @@ function App() {
               <main>
                 <div className="pl-24 pr-8 py-8">
                   <Switch>
-                    <Route exact path='/activities' component={ActivityDashboard} />
-                  
+                 
 
                     <Route exact path='/brands' component={BrandDashboard} />
                     <Route exact key={location.key} path={['/createBrand', '/editBrand/:id']} component={BrandForm} />
@@ -82,6 +82,9 @@ function App() {
                     <Route exact path='/createUser' component={UserRegistration} />
 
                     <Route exact key={location.key} path={['/editUser', '/editUser/:id']} component={UserProfile} />
+
+                    <Route exact path='/tenants' component={TenantDashboard} />
+                    <Route exact key={location.key} path={['/createTenant', '/editTenant/:id']} component={TenantForm} />
 
 
                     <Route path={'/errors'} component={TestErrors} />

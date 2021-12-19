@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React, { Fragment } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useStore } from '../stores/store';
-import { ChatAlt2Icon, CogIcon, ExclamationIcon, UsersIcon } from '@heroicons/react/outline'
+import { ChatAlt2Icon, CogIcon, ExclamationIcon, UserCircleIcon, UsersIcon } from '@heroicons/react/outline'
 import { Menu, Transition } from '@headlessui/react';
 
 
@@ -64,7 +64,14 @@ export default observer(function NavBar({ setTheme }: Props) {
                         >
                             <UsersIcon className="h-6 w-6 text-black" aria-hidden="true" />
                         </NavLink>
-
+                        <NavLink
+                            key={5}
+                            href=''
+                            className='flex justify-center text-gray-700 hover:bg-gray-100 hover:text-black px-3 py-2 rounded-md text-sm font-medium'
+                            to="/tenants"
+                        >
+                            <UserCircleIcon className="h-6 w-6 text-black" aria-hidden="true" />
+                        </NavLink>
 
 
 

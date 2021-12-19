@@ -1,21 +1,13 @@
 import { observer } from 'mobx-react-lite';
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
-import { Button, Header, Segment } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
 import { useStore } from '../../../app/stores/store';
-import { v4 as uuid } from 'uuid';
-import { Formik, Form } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import MyTextInput from '../../../app/common/form/MyTextInput';
-import MyTextArea from '../../../app/common/form/MyTextArea';
-import MySelectInput from '../../../app/common/form/MySelectInput';
-import { categoryOptions } from '../../../app/common/options/categoryOptions';
-import MyDateInput from '../../../app/common/form/MyDateInput';
-import { Activity } from '../../../app/models/activity';
-import { Brand } from '../../../app/models/brand';
-import LinkButton from '../../../app/common/form/LinkButton';
-import { ExclamationCircleIcon } from '@heroicons/react/outline';
+
 import MyCheckbox from '../../../app/common/form/MyCheckbox';
 import { User } from '../../../app/models/user';
 
